@@ -1,0 +1,16 @@
+Call function mymkdir("/myfirstdir/myseconddir/mythirddir"):
+Dir 'myfirstdir' has been created.
+Dir 'myseconddir' has been created.
+Dir 'mythirddir' has been created.
+Call function mylistdir("/myfirstdir/myseconddir"):
+---> mythirddir
+writedisk> virtualdisk[0] = CS3026 Operating Systems Assessment 2019
+
+===================================================================================================
+
+Call function mymkdir("/myfirstdir/myseconddir/testfile.txt"):
+Dir 'testfile.txt' has been created.
+Call function mylistdir("/myfirstdir/myseconddir"):
+---> mythirddir
+---> testfile.txt
+writedisk> virtualdisk[0] = CS3026 Operating Systems Assessment 2019

@@ -1,0 +1,96 @@
+
+Call function mymkdir("/firstdir/seconddir"):
+'firstdir' has been created.
+'seconddir' has been created.
+
+Call function myfopen("firstdir/seconddir/testfile1.txt", "w"):
+.......
+Call function mymkdir("firstdir/seconddir/testfile1.txt"):
+'testfile1.txt' has been created.
+Write 30 bytes to the file and close the file.
+
+Call function mylistdir("/firstdir/seconddir"):
+---> testfile1.txt
+
+Call function mychdir("/firstdir/seconddir"):
+Current Dir Index: 5
+
+Call function myfopen("testfile2.txt", "w"):
+'testfile2.txt' has been created.
+Write 31 bytes to the file and close the file.
+
+Call function mymkdir("/firstdir/seconddir/thirddir"):
+'thirddir' has been created.
+
+Call function myfopen("thirddir/testfile3.txt", "w"):
+.......
+Call function mymkdir("thirddir/testfile3.txt"):
+'testfile3.txt' has been created.
+Write 30 bytes to the file and close the file.
+
+Call function mylistdir("/firstdir/seconddir"):
+---> testfile1.txt
+---> testfile2.txt
+---> thirddir
+
+Call function mylistdir("/firstdir/seconddir/thirddir"):
+---> testfile3.txt
+writedisk> virtualdisk[0] = CS3026 Operating Systems Assessment 2019
+
+===========================================================================
+
+Call function myrmdir("/firstdir/seconddir/testfile1.txt"):
+Cannot remove a file with myrmdir(). Try myremove() instead.
+
+Myremove():
+Call function myremove("/firstdir/seconddir/testfile1.txt"):
+File testfile1.txt sucessfully removed!
+
+Call function mychdir("/firstdir/seconddir"):
+Current Dir Index: 5
+
+Call function myremove("testfile2.txt"):
+File testfile2.txt sucessfully removed!
+writedisk> virtualdisk[0] = CS3026 Operating Systems Assessment 2019
+
+===========================================================================
+
+Call function mychdir("thirddir"):
+Current Dir Index: 8
+
+Call function myrmdir("/firstdir/seconddir/thirddir"):
+Cannot remove a directory which has subfolders/subfiles.
+
+Call function mylistdir("/firstdir/seconddir/thirddir"):
+---> testfile3.txt
+
+Call function myremove("testfile3.txt"):
+File testfile3.txt sucessfully removed!
+writedisk> virtualdisk[0] = CS3026 Operating Systems Assessment 2019
+
+===========================================================================
+
+Call function mychdir("/firstdir/seconddir"):
+Current Dir Index: 5
+
+Call function mylistdir("/firstdir/seconddir"):
+---> thirddir
+
+Call function myrmdir("thirddir"):
+Dir thirddir sucessfully removed!
+
+Call function mychdir("/firstdir"):
+Current Dir Index: 4
+
+Call function myremove("seconddir"):
+Cannot remove directories with myremove(). Try myrmdir() instead.
+
+Call function myrmdir("/firstdir/seconddir"):
+Dir seconddir sucessfully removed!
+
+Call function mychdir("/"):
+Current Dir Index: 3
+
+Call function myrmdir("firstdir"):
+Dir firstdir sucessfully removed!
+writedisk> virtualdisk[0] = CS3026 Operating Systems Assessment 2019
